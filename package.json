@@ -1,0 +1,33 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:develop": "NODE_ENV=development nodemon --signal SIGTERM --exec \"babel-node --env-file=.env ./index.js\"",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "build": "npm run clean && babel ./ --out-dir dist --ignore 'test,scripts'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/runtime": "^7.4.3",
+    "discord.js": "^14.24.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/node": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/register": "^7.22.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^3.0.0"
+
+  }
+}
