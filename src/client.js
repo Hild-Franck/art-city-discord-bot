@@ -1,5 +1,6 @@
 import { Client, GatewayIntentBits, Events } from "discord.js"
 import { populateChannels } from "./channels"
+import { populateRoles } from "./roles"
 
 const client = new Client({
 	intents: [
@@ -16,7 +17,9 @@ client.on("error", error => {
 
 client.once(Events.ClientReady, async readyClient => {
 	console.log(`Ready! Logged in as ${readyClient.user.tag}`)
+
 	await populateChannels(client)
+	await populateRoles(client)
 })
 
 export default client
